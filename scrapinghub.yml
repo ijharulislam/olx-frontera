@@ -1,0 +1,5 @@
+projects:
+    default: 219027
+requirements_file: requirements.txt
+images:
+    default: ijhar/olx
