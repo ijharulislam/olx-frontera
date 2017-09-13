@@ -454,6 +454,7 @@ class OlxspiderSpider(scrapy.Spider):
                 # return
 
     def getDataUrl(self, response):
+        print("====== get Detail ======")
         main_cate = response.meta['main_cate']
 
         products = response.xpath(
