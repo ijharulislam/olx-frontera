@@ -29,7 +29,7 @@ categs = [
     "para-a-sua-casa",
     "esportes",
     "eletronicos-e-celulares",
-    "veiculos"
+    "veiculos",
     "empregos-e-negocios",
     "imoveis",
 ]
@@ -128,12 +128,16 @@ class OlxfpSpider(scrapy.Spider):
     }
 
     def start_requests(self):
+        index = len(all_urls)
         for u in all_urls:
             url = u.split(" ")[0]
             main_cate = u.split(" ")[1]
             req = scrapy.Request(url=url, headers=self.headers,
-                                 callback=self.getDataUrl, dont_filter=True)
+                                 callback=self.getDataUrl, dont_filter=True,
+                                meta={'priority': index}
+                                 )
             req.meta['main_cate'] = main_cate
+            index = index - 1
             yield req
 
     def getMain(self, response):
