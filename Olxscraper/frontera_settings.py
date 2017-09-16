@@ -1,3 +1,4 @@
+
 from frontera.settings.default_settings import MIDDLEWARES
 
 BACKEND = 'frontera.contrib.backends.sqlalchemy.revisiting.Backend'
@@ -15,4 +16,5 @@ MAX_NEXT_REQUESTS = 256
 #     'frontera.contrib.middlewares.domain.DomainMiddleware',
 #     'frontera.contrib.middlewares.fingerprint.DomainFingerprintMiddleware'
 # ])
+
 
